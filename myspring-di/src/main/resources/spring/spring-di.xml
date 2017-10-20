@@ -9,16 +9,17 @@
 		<property name="dname" value="哲♂学部" />
 		<property name="enable" value="true" />
 		<property name="emps">
-			<set><!--该属性定义的是一个数组, 等价于<list> -->
-				<ref bean="empA" />
-				<ref bean="empB" />
-			</set>
+			<map>
+			<entry key="1" value-ref="empA"></entry>
+			<entry key="2" value-ref="empB"></entry>
+			</map>
 		</property>
 		<property name="infos"><!--追加的是普通的字符串的数组信息  -->
-			<list>
-				<value>bilibili干杯[]~(￣▽￣)~*</value>
-				<value>deep♂dark♂fantasy</value>
-			</list>
+			<map>
+				<entry key="1" value="ass♂we♂can"/>
+				<entry key="1" value="bilibili干杯[]~(o▽o)~*"/><!--key重复了会覆盖  -->
+				<entry key="2" value="deep♂dark♂fantasy"/>
+			</map>
 		</property>
 	</bean>
 	<bean id="empA" class="cn.unicorn.myspring.di.vo.Emp">
