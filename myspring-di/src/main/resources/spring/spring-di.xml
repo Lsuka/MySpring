@@ -9,10 +9,10 @@
 		<property name="dname" value="哲♂学部" />
 		<property name="enable" value="true" />
 		<property name="emps">
-			<list><!--该属性定义的是一个数组, 等价于<list> -->
+			<set><!--该属性定义的是一个数组, 等价于<list> -->
 				<ref bean="empA" />
 				<ref bean="empB" />
-			</list>
+			</set>
 		</property>
 		<property name="infos"><!--追加的是普通的字符串的数组信息  -->
 			<list>

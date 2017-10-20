@@ -2,13 +2,14 @@ package cn.unicorn.myspring.di.vo;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 public class Dept implements Serializable {
 	private Long deptno;
 	private String dname;
 	private Boolean enable;
 	// 追加对象数据组(观察数组注入使用)
-	private List<Emp> emps;
+	private Set<Emp> emps;
 	private List<String> infos;
 	public Long getDeptno() {
 		return deptno;
@@ -28,10 +29,10 @@ public class Dept implements Serializable {
 	public void setEnable(Boolean enable) {
 		this.enable = enable;
 	}
-	public List<Emp> getEmps() {
+	public Set<Emp> getEmps() {
 		return emps;
 	}
-	public void setEmps(List<Emp> emps) {
+	public void setEmps(Set<Emp> emps) {
 		this.emps = emps;
 	}
 	public List<String> getInfos() {
