@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="hiredateObject" class="java.util.Date"/><!--配置了系统类  -->
+	<bean id="emp" class="cn.unicorn.myspring.di.vo.Emp">
+	<property name="empno" value="7369"/>
+	<property name="ename" value="smith"/>
+	<property name="salary" value="233.3"/>
+	<!--此时使用的是一个对象,所以可以直接进行其他bean的配置引用  -->
+	<property name="hiredate" >
+		<bean class="java.util.Date"></bean>
+	</property>
+	</bean>
+
+</beans>

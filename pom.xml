@@ -92,5 +92,6 @@
 	</build>
 	<modules>
 		<module>myspring-ioc</module>
+		<module>myspring-di</module>
 	</modules>
 </project>
