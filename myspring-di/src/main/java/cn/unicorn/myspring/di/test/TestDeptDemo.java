@@ -1,7 +1,5 @@
 package cn.unicorn.myspring.di.test;
 
-import java.util.Arrays;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,7 +11,6 @@ public class TestDeptDemo {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-di.xml");
 		Dept dept = ctx.getBean("deptObj", Dept.class);
 		System.out.println(dept);
-		System.out.println(Arrays.toString(dept.getEmps()));
-		System.out.println(Arrays.toString(dept.getInfos()));
+		System.out.println(dept.getEmps().getClass().getName());
 	}
 }

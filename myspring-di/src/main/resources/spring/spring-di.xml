@@ -9,16 +9,16 @@
 		<property name="dname" value="哲♂学部" />
 		<property name="enable" value="true" />
 		<property name="emps">
-			<array><!--该属性定义的是一个数组, 等价于<list> -->
+			<list><!--该属性定义的是一个数组, 等价于<list> -->
 				<ref bean="empA" />
 				<ref bean="empB" />
-			</array>
+			</list>
 		</property>
 		<property name="infos"><!--追加的是普通的字符串的数组信息  -->
-			<array>
+			<list>
 				<value>bilibili干杯[]~(￣▽￣)~*</value>
 				<value>deep♂dark♂fantasy</value>
-			</array>
+			</list>
 		</property>
 	</bean>
 	<bean id="empA" class="cn.unicorn.myspring.di.vo.Emp">
