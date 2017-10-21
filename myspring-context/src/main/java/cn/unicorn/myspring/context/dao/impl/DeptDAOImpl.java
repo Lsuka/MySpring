@@ -1,8 +1,11 @@
 package cn.unicorn.myspring.context.dao.impl;
 
+import org.springframework.stereotype.Repository;
+
 import cn.unicorn.myspring.context.dao.IDeptDAO;
 import cn.unicorn.myspring.context.vo.Dept;
 
+@Repository //等价于<bean id="deptDAO" class="cn.unicorn.myspring.context.dao.impl.DeptDAOImpl"/>
 public class DeptDAOImpl implements IDeptDAO {
 	@Override
 	public boolean doCreate(Dept dept) {
