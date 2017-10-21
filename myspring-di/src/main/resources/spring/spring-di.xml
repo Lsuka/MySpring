@@ -5,33 +5,9 @@
 
 	<bean id="hiredateObject" class="java.util.Date" /><!--配置了系统类 -->
 	<bean id="deptObj" class="cn.unicorn.myspring.di.vo.Dept"><!--创建Dept实例 -->
-		<property name="deptno" value="10" />
-		<property name="dname" value="哲♂学部" />
-		<property name="enable" value="true" />
-		<property name="infos"><!--追加的是普通的字符串的数组信息 -->
-			<props>
-				<prop key="deep">bilibili[]~(￣▽￣)~*</prop>
-				<prop key="dark">ass♂we♂can</prop>
-			</props>
-		</property>
-	</bean>
-	<bean id="empA" class="cn.unicorn.myspring.di.vo.Emp">
-		<property name="empno" value="7369" />
-		<property name="ename" value="smith" />
-		<property name="salary" value="233.3" />
-		<!--此时使用的是一个对象,所以可以直接进行其他bean的配置引用 -->
-		<property name="hiredate">
-			<bean class="java.util.Date"></bean>
-		</property>
-	</bean>
-	<bean id="empB" class="cn.unicorn.myspring.di.vo.Emp">
-		<property name="empno" value="7944" />
-		<property name="ename" value="allen" />
-		<property name="salary" value="66.6" />
-		<!--此时使用的是一个对象,所以可以直接进行其他bean的配置引用 -->
-		<property name="hiredate">
-			<bean class="java.util.Date"></bean>
-		</property>
+		<constructor-arg index="0" value="10" />
+		<constructor-arg index="1" value="摔♂跤部" />
+		<constructor-arg index="2" value="true" />
 	</bean>
 
 </beans>
