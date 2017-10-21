@@ -8,18 +8,11 @@
 		<property name="deptno" value="10" />
 		<property name="dname" value="哲♂学部" />
 		<property name="enable" value="true" />
-		<property name="emps">
-			<map>
-			<entry key="1" value-ref="empA"></entry>
-			<entry key="2" value-ref="empB"></entry>
-			</map>
-		</property>
-		<property name="infos"><!--追加的是普通的字符串的数组信息  -->
-			<map>
-				<entry key="1" value="ass♂we♂can"/>
-				<entry key="1" value="bilibili干杯[]~(o▽o)~*"/><!--key重复了会覆盖  -->
-				<entry key="2" value="deep♂dark♂fantasy"/>
-			</map>
+		<property name="infos"><!--追加的是普通的字符串的数组信息 -->
+			<props>
+				<prop key="deep">bilibili[]~(￣▽￣)~*</prop>
+				<prop key="dark">ass♂we♂can</prop>
+			</props>
 		</property>
 	</bean>
 	<bean id="empA" class="cn.unicorn.myspring.di.vo.Emp">

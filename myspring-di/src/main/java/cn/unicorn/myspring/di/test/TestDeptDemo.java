@@ -11,6 +11,6 @@ public class TestDeptDemo {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-di.xml");
 		Dept dept = ctx.getBean("deptObj", Dept.class);
 		System.out.println(dept);
-		System.out.println(dept.getEmps().getClass().getName());
+		System.out.println(dept.getInfos());
 	}
 }
