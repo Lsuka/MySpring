@@ -14,7 +14,7 @@ import junit.framework.TestCase;
 @ContextConfiguration(locations = { "classpath:spring/spring-context.xml" }) // 进行资源文件定位
 @RunWith(SpringJUnit4ClassRunner.class) // 设置要使用的测试工具类
 public class TestDeptServicejunit extends TestCase {
-	@Resource(name = "deptServiceNew")
+	@Resource
 	private IDpetService deptServie;// 直接注入业务对象
 
 	@Test

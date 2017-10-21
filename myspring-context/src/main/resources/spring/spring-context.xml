@@ -7,9 +7,4 @@
 	<context:annotation-config />
 	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
 	<context:component-scan base-package="cn.unicorn.myspring" />
-	<!--为了观察@Autowired和@Resource区别而定义的Bean -->
-	<bean id="deptServiceNew"
-		class="cn.unicorn.myspring.context.service.impl.DeptServiceImpl">
-		<property name="deptDAO" ref="deptDAOImpl"></property>
-	</bean>
 </beans>
