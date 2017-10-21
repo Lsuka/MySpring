@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<!--启用Annotation注解配置,新版本不用写 -->
-	<context:annotation-config/>
-	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息  -->
-	<context:component-scan base-package="cn.unicorn.myspring"/>
+	<context:annotation-config />
+	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
+	<context:component-scan base-package="cn.unicorn.myspring" />
+	<!--为了观察@Autowired和@Resource区别而定义的Bean -->
+	<bean id="deptServiceNew"
+		class="cn.unicorn.myspring.context.service.impl.DeptServiceImpl">
+		<property name="deptDAO" ref="deptDAOImpl"></property>
+	</bean>
 </beans>
