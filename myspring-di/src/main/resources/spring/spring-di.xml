@@ -3,11 +3,5 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="hiredateObject" class="java.util.Date" /><!--配置了系统类 -->
-	<bean id="deptObj" class="cn.unicorn.myspring.di.vo.Dept"><!--创建Dept实例 -->
-		<constructor-arg index="0" value="10" />
-		<constructor-arg index="1" value="摔♂跤部" />
-		<constructor-arg index="2" value="true" />
-	</bean>
-
+	<bean id="message" class="cn.unicorn.myspring.di.vo.Message"></bean>
 </beans>
