@@ -56,6 +56,14 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!--Spring 开发环境搭建end -->
+			<!--Spring 测试类库依赖包 start -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!--Spring 测试类库依赖包 end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>
