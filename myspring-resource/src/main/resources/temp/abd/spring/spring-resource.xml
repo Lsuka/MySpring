@@ -11,7 +11,7 @@
 	<bean id="resourceBean" class="cn.unicorn.myspring.resource.util.DefaultResourceBean">
 		<property name="resources">
 			<array>
-              <value>classpath:temp/**/spring-*.xml</value>
+				<value>classpath:</value>
 			</array>
 		</property>
 	</bean>
