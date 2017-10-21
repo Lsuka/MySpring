@@ -7,10 +7,14 @@
 	<context:annotation-config />
 	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
 	<context:component-scan base-package="cn.unicorn.myspring" />
-	<!--实现文件资源注入  -->
+	<!--实现文件资源注入 -->
 	<bean id="resourceBean" class="cn.unicorn.myspring.resource.util.DefaultResourceBean">
-		<!--<property name="resource" value="file:d:/233.xml"/>-->
-		<!--<property name="resource" value="classpath:spring/spring-resource.xml"/>-->
-		<property name="resource" value="http://www.baidu.com"/>
+		<property name="resources">
+			<list>
+				<value>http://www.baidu.com</value>
+				<value>classpath:spring/spring-resource.xml</value>
+				<value>file:d:/233.xml</value>
+			</list>
+		</property>
 	</bean>
 </beans>

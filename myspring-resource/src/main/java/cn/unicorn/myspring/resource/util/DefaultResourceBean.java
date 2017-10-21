@@ -1,15 +1,17 @@
 package cn.unicorn.myspring.resource.util;
 
+import java.util.List;
+
 import org.springframework.core.io.Resource;
 
 public class DefaultResourceBean {
-	private Resource resource;// 直接定义要使用的Bean对象
+	private List<Resource> resources;// 直接定义要使用的Bean对象
 
-	public void setResource(Resource resource) {
-		this.resource = resource;
+	public void setResources(List<Resource> resources) {
+		this.resources = resources;
 	}
 
-	public Resource getResource() {
-		return resource;
+	public List<Resource> getResources() {
+		return resources;
 	}
 }
