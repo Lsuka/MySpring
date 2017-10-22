@@ -2,22 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-	<!--如果要想进行任务的处理,则一定需要有一个任务调度的工厂类 -->
-	<bean id="taskFactory"
-		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
-		<!--任务工厂里面需要明确的设置出要执行本次任务所需要的任务类,而这个任务要求继承QuartzJobBean父类 -->
-		<property name="jobClass" value="cn.unicorn.myspring.schedule.quartz.MyTask" />
-		<property name="jobDataMap"><!--定义一些任务的相关配置信息 -->
-			<map>
-				<entry key="timeout" value="0" /><!--任务启动后不延迟,立即执行 -->
-			</map>
+	<!-- 定义一个新的专门用于自定义任务调度方法的工厂任务类 -->
+	<bean id="methodTaskFactory"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject"><!--定义要执行的任务程序类对象 -->
+			<bean class="cn.unicorn.myspring.schedule.quartz.MyTask" /><!-- 任务执行类 -->
 		</property>
+		<property name="targetMethod" value="runTask" /><!--设置执行任务的处理方法(任务执行类中对应的方法) -->
 	</bean>
 	<!--要定义任务触发的工厂类,使用Cron进行任务的触发操作 -->
 	<bean id="cronTrigger"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail" ref="taskFactory" /><!--定义每一次间隔触发是要执行的具体的任务详情 -->
-		<property name="cronExpression" value="0 * * * * ?" /><!--设置任务的触发时间(每分钟执行一次) -->
+		<property name="jobDetail" ref="methodTaskFactory" /><!--定义每一次间隔触发是要执行的具体的任务详情 -->
+		<property name="cronExpression" value="* * * * * ?" /><!--设置任务的触发时间(每秒调度一次) -->
 	</bean>
 	<!--配置任务的执行调度器 -->
 	<bean id="scheduleFactory"
