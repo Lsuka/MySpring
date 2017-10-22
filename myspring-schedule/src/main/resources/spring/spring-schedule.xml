@@ -11,4 +11,6 @@
 	<context:component-scan base-package="cn.unicorn.myspring" />
 	<!-- 启用annotation的SpringTask配置 -->
 	<task:annotation-driven />
+	<!--设置一个同时运行的线程池的大小,也就是说可以同时有两个调度任务执行 -->
+	<task:scheduler id="scheduler" pool-size="2" />
 </beans>
