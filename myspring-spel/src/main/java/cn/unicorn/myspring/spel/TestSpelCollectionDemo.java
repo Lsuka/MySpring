@@ -14,15 +14,12 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 public class TestSpelCollectionDemo {
 	public static void main(String[] args) throws Exception {
 		// 集合的投影处理,投影处理指的是可以通过表达式进行集合内容的操作
-		// List<String> all = new ArrayList<>();
-		// all.add("van游戏");
-		// all.add("deep♂dark");
-		// all.add("ass♂we♂can");
+		//对Map集合进行数据筛选
 		Map<String, String> all = new HashMap<>();
 		all.put("van", "deep♂dark");
 		all.put("king", "ass♂we♂can");
 		//整个处理之中就将Map.Entry隐含了
-		String str = "#allData.![#this.key + '-' + #this.value]";//修改集合中的内容
+		String str = "#allData.![#this.key.contains('king')]";//表示集合中的数据
 		ExpressionParser parser = new SpelExpressionParser();
 		Expression exp = parser.parseExpression(str);// 设置了一个自定义的根变量
 		EvaluationContext context = new StandardEvaluationContext();
