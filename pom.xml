@@ -103,5 +103,6 @@
 		<module>myspring-di</module>
 		<module>myspring-context</module>
 		<module>myspring-resource</module>
+		<module>myspring-spel</module>
 	</modules>
 </project>
