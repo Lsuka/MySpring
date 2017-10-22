@@ -15,6 +15,9 @@
 		<!--Spring start -->
 		<spring.version>5.0.0.RELEASE</spring.version><!--Spring的版本管理 -->
 		<!--Spring end -->
+		<!--QuartZ组件 start -->
+		<quartz.version>2.3.0</quartz.version>
+		<!--QuartZ组件 end -->
 		<!--其他开发包 start -->
 		<junit.version>4.12</junit.version>
 		<!--其他开发包 end -->
@@ -64,6 +67,20 @@
 				<scope>test</scope>
 			</dependency>
 			<!--Spring 测试类库依赖包 end -->
+			<!--Spring 定时调度依赖包 start -->
+			<!--定时调度依赖包 QuartZ组件 start -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<!--定时调度依赖包 QuartZ组件 end -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!--Spring 定时调度依赖包 end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>
@@ -104,5 +121,6 @@
 		<module>myspring-context</module>
 		<module>myspring-resource</module>
 		<module>myspring-spel</module>
+		<module>myspring-schedule</module>
 	</modules>
 </project>
