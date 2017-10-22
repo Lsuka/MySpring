@@ -1,22 +1,24 @@
-package cn.unicorn.myspring.spel.test;
+package cn.unicorn.myspring.schedule.test;
 
-import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cn.unicorn.myspring.spel.vo.Book;
+import junit.framework.TestCase;
 
 @ContextConfiguration(locations = { "classpath:spring/spring-*.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
-public class TestBook {
-	@Resource
-	private Book book;
-
+public class TestScheduleQuartZ extends TestCase {
 	@Test
-	public void testPrint() {
-		System.out.println(this.book);
+	public void testQuartZ() {
+		try {
+			TimeUnit.MINUTES.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
