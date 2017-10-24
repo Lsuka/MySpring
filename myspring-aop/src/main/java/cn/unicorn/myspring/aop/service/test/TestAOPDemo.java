@@ -18,6 +18,6 @@ public class TestAOPDemo extends TestCase {
 
 	@Test
 	public void test() {
-		System.out.println(this.messageService.echo("哔哩哔哩干杯"));
+		System.out.println(this.messageService.echo("mldn"));
 	}
 }

@@ -16,8 +16,14 @@
 		<aop:pointcut id="myPointcut"
 			expression="execution(public * cn.unicorn..service..*.*(..))" />
 		<aop:aspect ref="serviceAdvice"><!--进行切入处理的操作方法定义,所以要设置好切入的程序类名称 -->
-			<aop:before method="handleBefore" pointcut-ref="myPointcut" />
+			<aop:before method="handleBefore"
+				pointcut="execution(public * cn.unicorn..service..*.*(..)) and args(msg)"
+				arg-names="msg" />
 			<aop:after method="handleAfter" pointcut-ref="myPointcut" />
+			<aop:after-returning method="handleReturn"
+				pointcut-ref="myPointcut" returning="val" arg-names="val" />
+			<aop:after-throwing method="handleThrow"
+				pointcut-ref="myPointcut" throwing="e" arg-names="e" />
 		</aop:aspect>
 	</aop:config>
 </beans>
