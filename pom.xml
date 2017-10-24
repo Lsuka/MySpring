@@ -31,6 +31,9 @@
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<!--日志依赖包 end -->
+		<!--mysql start -->
+		<mysql.version>5.1.25</mysql.version>
+		<!--mysql end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -114,6 +117,20 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!--Spring AOP依赖包 end -->
+			<!--JDBC start -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!--mysql start -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			<!--mysql end -->
+			<!--JDBC end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>
@@ -156,5 +173,6 @@
 		<module>myspring-spel</module>
 		<module>myspring-schedule</module>
 		<module>myspring-aop</module>
+		<module>myspring-jdbc</module>
 	</modules>
 </project>
