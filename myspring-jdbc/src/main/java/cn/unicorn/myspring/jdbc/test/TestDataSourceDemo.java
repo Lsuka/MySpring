@@ -23,6 +23,8 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
 import cn.unicorn.myspring.jdbc.vo.News;
 import junit.framework.TestCase;
 

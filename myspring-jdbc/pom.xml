@@ -58,6 +58,12 @@
 		</dependency>
 		<!--mysql end -->
 		<!--JDBC end -->
+		<!--C3P0 start -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+		</dependency>
+		<!--C3P0 end -->
 		<!--Spring end -->
 	</dependencies>
 </project>

@@ -34,6 +34,13 @@
 		<!--mysql start -->
 		<mysql.version>5.1.5</mysql.version>
 		<!--mysql end -->
+		<!--C3P0 start -->
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<!--C3P0 end -->
+		<!-- 追加profiles路径 start -->
+		<profiles.dir>src/main/profiles</profiles.dir>
+		<resources.dir>src/main/resources</resources.dir>
+		<!-- 追加profiles路径 end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -131,6 +138,13 @@
 			</dependency>
 			<!--mysql end -->
 			<!--JDBC end -->
+			<!--C3P0 start -->
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>${c3p0.version}</version>
+			</dependency>
+			<!--C3P0 end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>
@@ -164,7 +178,42 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<!--此处的属性是profile中统一定义的路径的名称,不同的配置文件有不同的子目录 -->
+			<resource>
+				<directory>${profiles.dir}</directory>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>${resources.dir}</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
 	</build>
+	<!--明确的进行具体的资源名称的配置,这个名称是在maven打包的时候使用的名称 -->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profile.dir>${profiles.dir}/dev</profile.dir>
+			</properties>
+			<activation><!--如果在编译的时候没有设置任何的profile名字,则此配置生效 -->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>beta</id>
+			<properties>
+				<profile.dir>${profiles.dir}/beta</profile.dir>
+			</properties>
+		</profile>
+		<profile>
+			<id>product</id>
+			<properties>
+				<profile.dir>${profiles.dir}/product</profile.dir>
+			</properties>
+		</profile>
+	</profiles>
 	<modules>
 		<module>myspring-ioc</module>
 		<module>myspring-di</module>

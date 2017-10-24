@@ -8,12 +8,16 @@
 	<context:annotation-config />
 	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
 	<context:component-scan base-package="cn.unicorn.myspring" />
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/mldn" />
-		<property name="username" value="root" />
-		<property name="password" value="mysqladmin" />
+	<!-- 配置C3P0的信息 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driverClass}" />
+		<property name="jdbcUrl" value="${db.jdbcUrl}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.password}" />
+		<property name="maxPoolSize" value="${db.maxPoolSize}" />
+		<property name="initialPoolSize" value="${db.initialPoolSize}" />
+		<property name="minPoolSize" value="${db.minPoolSize}" />
+		<property name="maxIdleTime" value="${db.maxIdleTime}" />
 	</bean>
 	<!--配置JDBCTemplate模板的处理对象,该对象如果要想使用一定要配置数据库连接 -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
