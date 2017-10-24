@@ -32,7 +32,7 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<!--日志依赖包 end -->
 		<!--mysql start -->
-		<mysql.version>5.1.25</mysql.version>
+		<mysql.version>5.1.5</mysql.version>
 		<!--mysql end -->
 	</properties>
 	<dependencyManagement>
