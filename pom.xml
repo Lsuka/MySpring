@@ -27,6 +27,10 @@
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!--基础的pom环境属性 end -->
+		<!--日志依赖包 start -->
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<!--日志依赖包 end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -36,6 +40,23 @@
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<!--日志依赖包 start -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<!--日志依赖包 end -->
 			<!--Spring start -->
 			<!--Spring 开发环境搭建start -->
 			<dependency>
