@@ -10,20 +10,5 @@
 	<context:annotation-config />
 	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
 	<context:component-scan base-package="cn.unicorn.myspring" />
-	<!--自定义aop的实现 -->
-	<aop:config><!--进行AOP的配置处理 -->
-		<!--配置切入点表达式,这个表达式直接决定了最终到底在哪里去执行代理操作,该操作引入了AspectJ的设计语法 -->
-		<aop:pointcut id="myPointcut"
-			expression="execution(public * cn.unicorn..service..*.*(..))" />
-		<aop:aspect ref="serviceAdvice"><!--进行切入处理的操作方法定义,所以要设置好切入的程序类名称 -->
-			<aop:before method="handleBefore"
-				pointcut="execution(public * cn.unicorn..service..*.*(..)) and args(msg)"
-				arg-names="msg" />
-			<aop:after method="handleAfter" pointcut-ref="myPointcut" />
-			<aop:after-returning method="handleReturn"
-				pointcut-ref="myPointcut" returning="val" arg-names="val" />
-			<aop:after-throwing method="handleThrow"
-				pointcut-ref="myPointcut" throwing="e" arg-names="e" />
-		</aop:aspect>
-	</aop:config>
+	<aop:aspectj-autoproxy /><!-- 启用AOP的annotation支持 -->
 </beans>
