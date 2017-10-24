@@ -13,6 +13,10 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/mldn" />
 		<property name="username" value="root" />
-		<property name="password" value="mysqladmin"></property>
+		<property name="password" value="mysqladmin" />
+	</bean>
+	<!--配置JDBCTemplate模板的处理对象,该对象如果要想使用一定要配置数据库连接 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" /><!--配置数据源 -->
 	</bean>
 </beans>
