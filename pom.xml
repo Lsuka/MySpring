@@ -81,6 +81,18 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!--Spring 定时调度依赖包 end -->
+			<!--Spring AOP依赖包 start -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!--Spring AOP依赖包 end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>
@@ -122,5 +134,6 @@
 		<module>myspring-resource</module>
 		<module>myspring-spel</module>
 		<module>myspring-schedule</module>
+		<module>myspring-aop</module>
 	</modules>
 </project>
