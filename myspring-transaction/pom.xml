@@ -71,6 +71,16 @@
 		</dependency>
 		<!--C3P0 end -->
 		<!--JDBC end -->
+		<!--Spring AOP依赖包 start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<!--Spring AOP依赖包 end -->
 		<!--Spring end -->
 	</dependencies>
 </project>
