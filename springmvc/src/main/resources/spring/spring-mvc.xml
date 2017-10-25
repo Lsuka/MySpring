@@ -21,8 +21,18 @@
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!--进行所有静态WEB资源的映射路径配置  -->
-	<mvc:resources location="/WEB-INF/js/" mapping="/mvcjs/**"/>
-	<mvc:resources location="/WEB-INF/css/" mapping="/mvccss/**"/>
-	<mvc:resources location="/WEB-INF/images/" mapping="/mvcimages/**"/>
+	<!--进行所有静态WEB资源的映射路径配置 -->
+	<mvc:resources location="/WEB-INF/js/" mapping="/mvcjs/**" />
+	<mvc:resources location="/WEB-INF/css/" mapping="/mvccss/**" />
+	<mvc:resources location="/WEB-INF/images/" mapping="/mvcimages/**" />
+	<!--配置SpringMVC里面要使用的各项资源 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames"><!--定义所有的BaseName名称 -->
+			<array>
+				<value>cn.unicorn.message.pages</value>
+				<value>cn.unicorn.message.messages</value>
+			</array>
+		</property>
+	</bean>
 </beans>
