@@ -9,12 +9,7 @@ public class Emp implements Serializable {
 	private Double salary;
 	private Date hiredate;
 	private Integer level;
-
-	@Override
-	public String toString() {
-		return "Emp [empno=" + empno + ", ename=" + ename + ", salary=" + salary + ", hiredate=" + hiredate + ", level="
-				+ level + "]";
-	}
+	private Dept dept;
 
 	public Long getEmpno() {
 		return empno;
@@ -55,4 +50,19 @@ public class Emp implements Serializable {
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
+
+	public Dept getDept() {
+		return dept;
+	}
+
+	public void setDept(Dept dept) {
+		this.dept = dept;
+	}
+
+	@Override
+	public String toString() {
+		return "Emp [empno=" + empno + ", ename=" + ename + ", salary=" + salary + ", hiredate=" + hiredate + ", level="
+				+ level + ", dept=" + dept + "]";
+	}
+
 }
