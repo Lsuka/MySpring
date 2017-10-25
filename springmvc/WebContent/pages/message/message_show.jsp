@@ -11,6 +11,6 @@
 <title></title>
 </head>
 <body>
-<h1>ECHO消息显示:${echoMessage }</h1>
+<h1>ECHO消息显示:${echoMessage } ${echoTags }</h1>
 </body>
 </html>
