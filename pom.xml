@@ -48,6 +48,9 @@
 		<jsp.ver>2.3.1</jsp.ver>
 		<servlet.ver>4.0.0</servlet.ver>
 		<!--web所依赖的包 end -->
+		<!--json需要的依赖包 start -->
+		<jackson.version>2.9.2</jackson.version>
+		<!--json需要的依赖包 end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -199,6 +202,23 @@
 			</dependency>
 			<!--SpringMVC依赖包 end -->
 			<!--Spring end -->
+			<!--json需要的依赖包 start -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId> 
+				<artifactId>jackson-core</artifactId>  
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<!--json需要的依赖包 end -->
 		</dependencies>
 	</dependencyManagement>
 	<build>
