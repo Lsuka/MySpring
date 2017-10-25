@@ -15,4 +15,14 @@
 	<mvc:annotation-driven />
 	<!--启用Servlet的配置处理 -->
 	<mvc:default-servlet-handler />
+	<!--启动一个视图访问的解析处理器,该操作会自动在容器中加载,不需要做任何的依赖配置 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!--进行所有静态WEB资源的映射路径配置  -->
+	<mvc:resources location="/WEB-INF/js/" mapping="/mvcjs/**"/>
+	<mvc:resources location="/WEB-INF/css/" mapping="/mvccss/**"/>
+	<mvc:resources location="/WEB-INF/images/" mapping="/mvcimages/**"/>
 </beans>
