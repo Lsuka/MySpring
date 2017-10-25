@@ -40,6 +40,13 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 		<!--Spring 开发环境搭建end -->
+		<!--Spring 测试类库依赖包 start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--Spring 测试类库依赖包 end -->
 		<!--Spring end -->
 		<!--添加Webservice依赖包 start -->
 		<!--WebService本地程序依赖包 start -->
@@ -59,6 +66,21 @@
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
 		</dependency>
 		<!-- WebService依赖包 end -->
 		<!--添加Webservice依赖包 end -->

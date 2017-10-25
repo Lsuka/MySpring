@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-
-	<bean id="message" class="cn.unicorn.myspring.di.vo.Message"
-		init-method="initMessage" destroy-method="destroyMessage"></bean>
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!--定义注解的扫描包,必须配置好扫描包之后才可以扫描该包中出现的注解信息 -->
+	<context:component-scan base-package="cn.unicorn.myspring" />
+	<jaxws:endpoint
+		implementor="cn.unicorn.myspring.remote.service.impl.MessageServiceImpl"
+		id="messageService" address="http://192.168.28.136:7777/message" />
 </beans>

@@ -40,13 +40,30 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 		<!--Spring 开发环境搭建end -->
+		<!--WebService依赖包 start -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<!--WebService依赖包 end -->
 		<!--Spring end -->
-		<!--添加Webservice依赖包 start  -->
+		<!--添加Webservice本地依赖包 start -->
 		<dependency>
 			<groupId>cn.unicorn</groupId>
 			<artifactId>myspring</artifactId>
 			<version>${myspring.version}</version>
 		</dependency>
-		<!--添加Webservice依赖包 end  -->
+		<!--添加Webservice本地依赖包 end -->
 	</dependencies>
 </project>

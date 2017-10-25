@@ -41,6 +41,9 @@
 		<profiles.dir>src/main/profiles</profiles.dir>
 		<resources.dir>src/main/resources</resources.dir>
 		<!-- 追加profiles路径 end -->
+		<!--WebService依赖包 start -->
+		<cxf.version>3.2.0</cxf.version>
+		<!--WebService依赖包 end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -106,14 +109,14 @@
 				<version>${quartz.version}</version>
 			</dependency>
 			<!--定时调度依赖包 QuartZ组件 end -->
-			<!--事务控制 依赖包 start  -->
-			<!--spring-tx这个包在定时任务时调用过,事务控制也需要  -->
+			<!--事务控制 依赖包 start -->
+			<!--spring-tx这个包在定时任务时调用过,事务控制也需要 -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			<!--事务控制 依赖包 end  -->
+			<!--事务控制 依赖包 end -->
 			<!--Spring 定时调度依赖包 end -->
 			<!--Spring AOP依赖包 start -->
 			<dependency>
@@ -148,6 +151,23 @@
 				<version>${c3p0.version}</version>
 			</dependency>
 			<!--C3P0 end -->
+			<!--WebService依赖包 start -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http-jetty</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<!--WebService依赖包 end -->
 			<!--Spring end -->
 		</dependencies>
 	</dependencyManagement>

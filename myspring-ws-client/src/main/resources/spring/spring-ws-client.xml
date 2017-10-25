@@ -2,7 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-
-	<bean id="message" class="cn.unicorn.myspring.di.vo.Message"
-		init-method="initMessage" destroy-method="destroyMessage"></bean>
+	<!--依据客户端代码的工厂类来创建客户端伪代码 -->
+	<bean id="messageClient" class="cn.unicorn.myspring.remote.service.IMessageService"
+		factory-bean="clientFactory" factory-method="create" />
+		<!--创建WebService客户端的程序代码  -->
+		<bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+			<property name="serviceClass" value="cn.unicorn.myspring.remote.service.IMessageService"/><!--定义远程接口  -->
+			<property name="address" value="http://192.168.28.136:7777/message"></property>
+		</bean>
 </beans>
