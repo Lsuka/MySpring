@@ -227,5 +227,8 @@
 		<module>myspring-aop</module>
 		<module>myspring-jdbc</module>
 		<module>myspring-transaction</module>
+		<module>myspring-ws-api</module>
+		<module>myspring-ws-service</module>
+		<module>myspring-ws-client</module>
 	</modules>
 </project>
