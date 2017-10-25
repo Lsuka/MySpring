@@ -106,11 +106,14 @@
 				<version>${quartz.version}</version>
 			</dependency>
 			<!--定时调度依赖包 QuartZ组件 end -->
+			<!--事务控制 依赖包 start  -->
+			<!--spring-tx这个包在定时任务时调用过,事务控制也需要  -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+			<!--事务控制 依赖包 end  -->
 			<!--Spring 定时调度依赖包 end -->
 			<!--Spring AOP依赖包 start -->
 			<dependency>
@@ -223,5 +226,6 @@
 		<module>myspring-schedule</module>
 		<module>myspring-aop</module>
 		<module>myspring-jdbc</module>
+		<module>myspring-transaction</module>
 	</modules>
 </project>
