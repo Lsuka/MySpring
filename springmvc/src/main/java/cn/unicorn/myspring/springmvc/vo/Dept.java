@@ -3,9 +3,9 @@ package cn.unicorn.myspring.springmvc.vo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Dept implements Serializable{
-private Long deptno;
-private String dname;
+public class Dept implements Serializable {
+	private Long deptno;
+	private String dname;
 	private Date createdate;
 
 	@Override
