@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.unicorn</groupId>
@@ -51,6 +50,10 @@
 		<!--json需要的依赖包 start -->
 		<jackson.version>2.9.2</jackson.version>
 		<!--json需要的依赖包 end -->
+		<!--fileupload上传组件 start -->
+		<fileupload.version>1.3.3</fileupload.version>
+		<commons-io.version>2.5</commons-io.version>
+		<!--fileupload上传组件 end -->
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -204,8 +207,8 @@
 			<!--Spring end -->
 			<!--json需要的依赖包 start -->
 			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId> 
-				<artifactId>jackson-core</artifactId>  
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
 			<dependency>
@@ -219,6 +222,18 @@
 				<version>${jackson.version}</version>
 			</dependency>
 			<!--json需要的依赖包 end -->
+			<!--fileupload上传组件 start -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${fileupload.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<!--fileupload上传组件 end -->
 		</dependencies>
 	</dependencyManagement>
 	<build>
@@ -301,5 +316,6 @@
 		<module>myspring-ws-service</module>
 		<module>myspring-ws-client</module>
 		<module>springmvc</module>
-	</modules>
+    <module>myspring-upload</module>
+  </modules>
 </project>
