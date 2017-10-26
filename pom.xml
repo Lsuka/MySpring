@@ -317,5 +317,6 @@
 		<module>myspring-ws-client</module>
 		<module>springmvc</module>
     <module>myspring-upload</module>
+		<module>myspring-interceptor</module>
   </modules>
 </project>
