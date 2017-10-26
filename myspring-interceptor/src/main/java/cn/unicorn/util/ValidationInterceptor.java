@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,7 +15,15 @@ public class ValidationInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		this.logger.info("@@@1.[***preHandle***]" + handler.getClass());
+		if (handler instanceof HandlerMethod) {// 执行向下转型前应该首先判断其是否是指定类的实例
+			HandlerMethod handlerMethod = (HandlerMethod) handler;// 强制转换
+			this.logger.info("[处理的Action对象]" + handlerMethod.getBean());
+			this.logger.info("[处理的Action-Class对象]" + handlerMethod.getBeanType());
+			this.logger.info("[Action处理方法名称]" + handlerMethod.getMethod());
+			for (int i = 0; i < handlerMethod.getMethodParameters().length; i++) {
+				this.logger.info("@@[Action处理方法参数 - " + i + "]" + handlerMethod.getMethodParameters()[i]);
+			}
+		}
 		return true;// 返回true表示放行,而如果返回false表示不执行后续的Action或拦截器
 	}
 
